@@ -1,6 +1,6 @@
 import { useState } from 'react';
 export default function Button() {
-    const questions = [
+	const questions = [
 		{
 			questionText: 'What is the capital of France?',
 			answerOptions: [
@@ -57,11 +57,13 @@ export default function Button() {
 	};
 	return (
 		<div className='app'>
-			{showScore ? (
+			{showScore ? 
+			(
 				<div className='score-section'>
 					You scored {score} out of {questions.length}
 				</div>
-			) : (
+			) : 
+			(
 				<>
 					<div className='question-section'>
 						<div className='question-count'>
@@ -69,7 +71,7 @@ export default function Button() {
 						</div>
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
-					    <div className='answer-section'>
+					<div className='answer-section'>
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
 							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 						))}
